@@ -1,7 +1,44 @@
 'use strict';
 
-const {expect} = require('chai');
-const AirportFareCalc = require('../player_object');
+module.exports = class player_object {
+//	let name;
 
-describe('player_object', ()=> {
-	describe('print', ()=> {
+	setName(value){
+		this.name = value;
+	}
+	getName(value){
+		return this.name;
+	}
+
+	setToken(value){
+		this.token = value;
+	}
+	getToken(value){
+		return this.token;
+	}
+
+	setBalance(value){
+		this.balance = value;
+	}
+	getBalance(value){
+		return this.balance;
+	}
+
+	setPosition(value){
+		this.position = value;
+	}
+	getPosition(value){
+		return this.position;
+	}
+
+	pay(value){
+		if (this.balance < value) {
+			this.balance = 0;
+			return false;
+		}
+		else {
+			this.balance -= value;
+			return true;
+		}
+	}
+};
