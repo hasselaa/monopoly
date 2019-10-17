@@ -51,7 +51,7 @@ class board_object {
 	}
 	
 	getProperty(value){
-		return this.tiles[value];
+		return this.tiles[value].getName();
 	}
 }
 module.exports.board_object = board_object;

@@ -1,6 +1,6 @@
 const readline = require('readline');
 const player = require('./player_object.js');
-//const board = require('./board_object.js');
+const {board_object} = require('./board_object.js');
 const property = require('./property_object.js');
 const monopoly = require('./monopoly.js');
 const rl = readline.createInterface({
@@ -11,6 +11,7 @@ const rl = readline.createInterface({
 let mono = new monopoly();
 let P1 = new player();
 let P2 = new player();
+let the_board = new board_object("US");
 
 initGame();
 
@@ -60,7 +61,9 @@ function mainLoop(player, lastVal)
 	var rollSum = mono.sumDieRoll(dieVal1, dieVal2);
 	console.log(player.name + ' moves ' + rollSum + ' places.');
 	player.move(rollSum);
-	console.log(player.name + '\'s position is now ' + player.getPosition());
+	result = player.getPosition();
+	console.log(result);
+	console.log(player.name + '\'s position is now ' + the_board.getProperty(result));
 	if (player.getPosition() < lastVal)
 	{
 		passedGo(player);
