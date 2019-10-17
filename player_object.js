@@ -1,33 +1,33 @@
 'use strict';
 
 module.exports = class player_object {
-//	let name;
+//	let name; // Why can't we do this? Why does it work without this?
 
 	setName(value){
 		this.name = value;
 	}
-	getName(value){
+	getName(){
 		return this.name;
 	}
 
 	setToken(value){
 		this.token = value;
 	}
-	getToken(value){
+	getToken(){
 		return this.token;
 	}
 
 	setBalance(value){
 		this.balance = value;
 	}
-	getBalance(value){
+	getBalance(){
 		return this.balance;
 	}
 
 	setPosition(value){
 		this.position = value;
 	}
-	getPosition(value){
+	getPosition(){
 		return this.position;
 	}
 

@@ -4,13 +4,13 @@ const {expect} = require('chai');
 const player_object = require('../player_object');
 const {tile_object, property_object} = require('../property_object');
 
-describe('board_object', ()=> {
+describe('property_object', ()=> {
 	describe('access', ()=> {
-		let myBoard = new board_object();
+		let myProperty = new property_object('Marvin Gardens');
 	
-		it('has a property_object',()=> {
+		it('has a name',()=> {
 			//myProperty.setName();
-			let result = myBoard.getProperty();
+			let result = myProperty.getName();
 			expect(result).to.equal('Marvin Gardens');
 		});
 /*
