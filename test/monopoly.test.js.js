@@ -19,7 +19,22 @@ describe('monopoly', ()=> {
 	});
 	
 	describe('sum', ()=> {
-		let _monopoly = new monopoly();
+		var tests = [
+				{rollOne: 1, rollTwo: 6, expected: 7},
+				{rollOne: 5, rollTwo: null, expected: 5}	
+			];
+		
+		tests.forEach((test) =>{
+			it ('outputs a total roll value of ' 
+			+ test.expected 
+			+ ' when inputs are '
+			+ test.rollOne + ' and ' + test.rollTwo, ()=> {
+				const result = _monopoly.sumDieRoll(test.rollOne, test.rollTwo);
+				expect(result).to.equal(test.expected);
+			});
+		});
+		
+		
 		
 	});
 });
