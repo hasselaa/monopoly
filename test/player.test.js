@@ -57,4 +57,18 @@ describe('player_object', ()=> {
 			expect(result).to.equal(0);
 		});
 	});
+	describe('player movement functions', ()=> {
+		let myPlayer;
+		beforeEach(()=> {
+			myPlayer = new player_object();
+		})
+
+		it('it can move',()=> {
+			myPlayer.setPosition(10);
+			let result = myPlayer.move(2);
+			expect(result).to.equal(true);
+			result = myPlayer.getPosition();
+			expect(result).to.equal(12);
+		});
+	});
 });

@@ -41,4 +41,9 @@ module.exports = class player_object {
 			return true;
 		}
 	}
+	move(value){
+		// This is weird, I know. The player shouldn't know about how to move
+		this.position = (this.position + value) % 40;
+		return true;
+	}
 };
